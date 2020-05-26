@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>RepGridRecSys</title>
+		<meta charset="utf-8">
+	</head>
+
+	<style type="text/css">
+	    * {
+	        box-sizing: border-box;
+	    }
+	    body {
+ 			background:#f9f9f9;
+	    	margin: 0px;
+	    	padding: 0px;
+	    	text-align: center;
+	    	font-size: 1em;
+	    	line-height: 1.5em;
+	    	font-family: sans-serif,Arial;
+	    }
+	    b{
+	    	color: #327fc7;
+	    }
+
+	    header{
+	    	width: 80%;
+	    	margin: 0 auto;
+	    	padding:25px 10px;
+	    	text-align: left;
+	    }
+
+	    main{
+	    	width: 80%;
+	    	margin: 0 auto;
+	    	padding:10px;
+	    	text-align: left;
+	    }
+
+	    table{
+	    	border: 1px solid #ddd;
+	    	background: white;
+	    	padding: 15px;
+	    	margin: 0 auto;
+	    	text-align: center;
+	    	border-radius: 5px;
+	    	-moz-border-radius: 5px;
+	    	-webkit-border-radius: 5px;
+	    	-o-border-radius: 5px;
+	    	-ms-border-radius: 5px;
+	    }
+	    td{
+	    	padding: 5px;
+	    	text-align: center;
+	    	border: 1px solid black;
+	    	border-radius: 3px;
+	    	-moz-border-radius: 3px;
+	    	-webkit-border-radius: 3px;
+	    	-o-border-radius: 3px;
+	    	-ms-border-radius: 3px;
+	    }
+
+	    #SecondRow td{
+	    	border: none;
+	    }
+
+	    .RatingCell{
+	    	width: 10px;
+	    }
+
+	    input{
+	    	border: none;
+	    	outline: none;
+	    }
+
+	    ::placeholder {
+  			color: #97a0bf;
+  			opacity: 0.3;
+  			-moz-opacity: 0.3;
+	    	-webkit-opacity: 0.3;
+	    	-o-opacity: 0.3;
+	    	-ms-opacity: 0.3;
+		}
+
+		.mybutton{
+			color: white;
+			border: none;
+			outline: none;
+			border-radius: 3px;
+	    	-moz-border-radius: 3px;
+	    	-webkit-border-radius: 3px;
+	    	-o-border-radius: 3px;
+	    	-ms-border-radius: 3px;
+	    	cursor: pointer;
+	    	margin-top: 10px;
+		}
+
+		.mybutton: hover{
+			border: 1px solid #ddd;
+		}
+
+		#addrowbtn{
+			background:#327fc7;
+			padding:10px 15px;
+			
+		}
+
+		#submitbtn{
+			background: green;
+			padding:10px 25px;
+		}
+
+	    footer{
+	    	width: 80%;
+	    	margin: 0 auto;
+	    	padding:10px;
+	    	text-align: left;
+	    }
+
+	    #row6, #row7, #row8, #row9, #row10{
+	    	display: none;
+	    }
+	</style>
+
+	<script type="text/javascript">
+		var rowcounter = 6;
+
+		function addingarow(){
+
+			if(rowcounter<11){
+				document.getElementById("row"+rowcounter).style.display = "table-row";
+				rowcounter = rowcounter + 1;
+			}
+			else{
+				alert("Thanks, the maximum number of rows at this time is 10.");
+			}
+			
+
+		}
+	</script>
+
+	<body>
+		<header>
+			<a>
+				<b>Subject:</b> Requirement elicitation for a <span style="text-decoration:underline;">university enrollment system</span> by using a collaborative filtering recommender system.
+			</a>
+			<br>
+			<p>
+				<b>Hi,</b><br>Thanks for your collaboration in doing this research. You can find an explanation about feeling this table at the bottom of the page.
+			</p>
+		</header>
+		<main>
+			<form action="http://www.alifallahi.com/RepGridRecSys/submit.php" method="post" name="repgirdform">
+				<table>
+					<tr>
+						<th>Construct</th>
+						<th colspan="11">Rate</th>
+						<th>Construct</th>
+					</tr>
+					<tr id="SecondRow">
+						<td style="text-align: right;"><</td>
+						<td colspan="11"><hr></td>
+						<td style="text-align: left;">></td>
+					</tr>
+					<tr>
+						<td><input type="text" name="Construct1Left" required="required"></td>
+						<td colspan="11">
+							<input type="radio" name="Construct1" value="1" required>
+							<input type="radio" name="Construct1" value="2">
+							<input type="radio" name="Construct1" value="3">
+							<input type="radio" name="Construct1" value="4">
+							<input type="radio" name="Construct1" value="5">
+							<input type="radio" name="Construct1" value="6">
+							<input type="radio" name="Construct1" value="7">
+							<input type="radio" name="Construct1" value="8">
+							<input type="radio" name="Construct1" value="9">
+							<input type="radio" name="Construct1" value="10">
+							<input type="radio" name="Construct1" value="11">
+						</td>
+						<td><input type="text" name="Construct1Right" required="required"></td>
+					</tr>
+					<tr>
+						<td><input type="text" name="Construct2Left"></td>
+						<td colspan="11">
+							<input type="radio" name="Construct2" value="1">
+							<input type="radio" name="Construct2" value="2">
+							<input type="radio" name="Construct2" value="3">
+							<input type="radio" name="Construct2" value="4">
+							<input type="radio" name="Construct2" value="5">
+							<input type="radio" name="Construct2" value="6">
+							<input type="radio" name="Construct2" value="7">
+							<input type="radio" name="Construct2" value="8">
+							<input type="radio" name="Construct2" value="9">
+							<input type="radio" name="Construct2" value="10">
+							<input type="radio" name="Construct2" value="11">
+						</td>
+						<td><input type="text" name="Construct2Right"></td>
+					</tr>
+					<tr>
+						<td><input type="text" name="Construct3Left"></td>
+						<td colspan="11">
+							<input type="radio" name="Construct3" value="1">
+							<input type="radio" name="Construct3" value="2">
+							<input type="radio" name="Construct3" value="3">
+							<input type="radio" name="Construct3" value="4">
+							<input type="radio" name="Construct3" value="5">
+							<input type="radio" name="Construct3" value="6">
+							<input type="radio" name="Construct3" value="7">
+							<input type="radio" name="Construct3" value="8">
+							<input type="radio" name="Construct3" value="9">
+							<input type="radio" name="Construct3" value="10">
+							<input type="radio" name="Construct3" value="11">
+						</td>
+						<td><input type="text" name="Construct3Right"></td>
+					</tr>
+					<tr>
+						<td><input type="text" name="Construct4Left"></td>
+						<td colspan="11">
+							<input type="radio" name="Construct4" value="1">
+							<input type="radio" name="Construct4" value="2">
+							<input type="radio" name="Construct4" value="3">
+							<input type="radio" name="Construct4" value="4">
+							<input type="radio" name="Construct4" value="5">
+							<input type="radio" name="Construct4" value="6">
+							<input type="radio" name="Construct4" value="7">
+							<input type="radio" name="Construct4" value="8">
+							<input type="radio" name="Construct4" value="9">
+							<input type="radio" name="Construct4" value="10">
+							<input type="radio" name="Construct4" value="11">
+						</td>
+						<td><input type="text" name="Construct4Right"></td>
+					</tr>
+					<tr>
+						<td><input type="text" name="Construct5Left"></td>
+						<td colspan="11">
+							<input type="radio" name="Construct5" value="1">
+							<input type="radio" name="Construct5" value="2">
+							<input type="radio" name="Construct5" value="3">
+							<input type="radio" name="Construct5" value="4">
+							<input type="radio" name="Construct5" value="5">
+							<input type="radio" name="Construct5" value="6">
+							<input type="radio" name="Construct5" value="7">
+							<input type="radio" name="Construct1" value="8">
+							<input type="radio" name="Construct1" value="9">
+							<input type="radio" name="Construct1" value="10">
+							<input type="radio" name="Construct1" value="11">
+						</td>
+						<td><input type="text" name="Construct5Right"></td>
+					</tr>
+					<tr id="row6">
+						<td><input type="text" name="Construct6Left"></td>
+						<td colspan="11">
+							<input type="radio" name="Construct6" value="1">
+							<input type="radio" name="Construct6" value="2">
+							<input type="radio" name="Construct6" value="3">
+							<input type="radio" name="Construct6" value="4">
+							<input type="radio" name="Construct6" value="5">
+							<input type="radio" name="Construct6" value="6">
+							<input type="radio" name="Construct6" value="7">
+							<input type="radio" name="Construct6" value="8">
+							<input type="radio" name="Construct6" value="9">
+							<input type="radio" name="Construct6" value="10">
+							<input type="radio" name="Construct6" value="11">
+						</td>
+						<td><input type="text" name="Construct6Right"></td>
+					</tr>
+					<tr id="row7">
+						<td><input type="text" name="Construct7Left"></td>
+						<td colspan="11">
+							<input type="radio" name="Construct7" value="1">
+							<input type="radio" name="Construct7" value="2">
+							<input type="radio" name="Construct7" value="3">
+							<input type="radio" name="Construct7" value="4">
+							<input type="radio" name="Construct7" value="5">
+							<input type="radio" name="Construct7" value="6">
+							<input type="radio" name="Construct7" value="7">
+							<input type="radio" name="Construct7" value="8">
+							<input type="radio" name="Construct7" value="9">
+							<input type="radio" name="Construct7" value="10">
+							<input type="radio" name="Construct7" value="11">
+						</td>
+						<td><input type="text" name="Construct7Right"></td>
+					</tr>
+					<tr id="row8">
+						<td><input type="text" name="Construct8Left"></td>
+						<td colspan="11">
+							<input type="radio" name="Construct8" value="1">
+							<input type="radio" name="Construct8" value="2">
+							<input type="radio" name="Construct8" value="3">
+							<input type="radio" name="Construct8" value="4">
+							<input type="radio" name="Construct8" value="5">
+							<input type="radio" name="Construct8" value="6">
+							<input type="radio" name="Construct8" value="7">
+							<input type="radio" name="Construct8" value="8">
+							<input type="radio" name="Construct8" value="9">
+							<input type="radio" name="Construct8" value="10">
+							<input type="radio" name="Construct8" value="11">
+						</td>
+						<td><input type="text" name="Construct8Right"></td>
+					</tr>
+					<tr id="row9">
+						<td><input type="text" name="Construct9Left"></td>
+						<td colspan="11">
+							<input type="radio" name="Construct9" value="1">
+							<input type="radio" name="Construct9" value="2">
+							<input type="radio" name="Construct9" value="3">
+							<input type="radio" name="Construct9" value="4">
+							<input type="radio" name="Construct9" value="5">
+							<input type="radio" name="Construct9" value="6">
+							<input type="radio" name="Construct9" value="7">
+							<input type="radio" name="Construct9" value="8">
+							<input type="radio" name="Construct9" value="9">
+							<input type="radio" name="Construct9" value="10">
+							<input type="radio" name="Construct9" value="11">
+						</td>
+						<td><input type="text" name="Construct9Right"></td>
+					</tr>
+					<tr id="row10">
+						<td><input type="text" name="Construct10Left"></td>
+						<td colspan="11">
+							<input type="radio" name="Construct10" value="1">
+							<input type="radio" name="Construct10" value="2">
+							<input type="radio" name="Construct10" value="3">
+							<input type="radio" name="Construct10" value="4">
+							<input type="radio" name="Construct10" value="5">
+							<input type="radio" name="Construct10" value="6">
+							<input type="radio" name="Construct10" value="7">
+							<input type="radio" name="Construct10" value="8">
+							<input type="radio" name="Construct10" value="9">
+							<input type="radio" name="Construct10" value="10">
+							<input type="radio" name="Construct10" value="11">
+						</td>
+						<td><input type="text" name="Construct10Right"></td>
+					</tr>
+					<tr id="SecondRow">
+						<td><button onclick="addingarow()" id="addrowbtn" class="mybutton">Adding a new row</button></td>
+						<td colspan="11">
+							<input type="submit" name="submit" id="submitbtn" value="Submit" class="mybutton">
+						</td>
+						<td></td>
+					</tr>
+				</table>
+			</form>
+		</main>
+		<footer>
+			<p>
+				<b>Example:</b>
+				<br>
+				The provided table has the structure of the <a href="https://en.wikipedia.org/wiki/Repertory_grid" target="_blank">Repertory Grid</a>. The subject of the research is about eliciting the requirements of a university enrollment system. The following table is an example of some of the most common "Construct"s of the subject.
+				<p>
+					The left Construct and the right Construct are the opposite sides of the same issue.
+					<br>
+					Between these two Constructs, there are 11 cells. You can show how you agree with each Construct by putting a star (*) near each Construct.
+				</p>
+			</p>
+			<table>
+				<tr>
+					<th>Construct</th>
+					<th colspan="11">Rate</th>
+					<th>Construct</th>
+				</tr>
+				<tr id="SecondRow">
+					<td style="text-align: right;"><</td>
+					<td colspan="11"><hr></td>
+					<td style="text-align: left;">></td>
+				</tr>
+				<tr>
+					<td>Low level of security</td>
+					<td colspan="11">
+						<input type="radio"  checked="checked" >
+						<input type="radio"  disabled>
+						<input type="radio"  disabled>
+						<input type="radio"  disabled>
+						<input type="radio"  disabled>
+						<input type="radio"  disabled>
+						<input type="radio"  disabled>
+						<input type="radio"  disabled>
+						<input type="radio"  disabled>
+						<input type="radio"  disabled>
+						<input type="radio"  disabled>
+					</td>
+					<td>High level of security</td>
+				</tr>
+				<tr>
+					<td>Poor user interface</td>
+					<td colspan="11">
+						<input type="radio"  disabled>
+						<input type="radio"  disabled>
+						<input type="radio"  disabled>
+						<input type="radio"  disabled>
+						<input type="radio"  disabled>
+						<input type="radio"  checked="checked" >
+						<input type="radio"  disabled>
+						<input type="radio"  disabled>
+						<input type="radio"  disabled>
+						<input type="radio"  disabled>
+						<input type="radio"  disabled>
+					</td>
+					<td>Excellent user interface</td>
+				</tr>
+				<tr>
+					<td>Low speed</td>
+					<td colspan="11">
+						<input type="radio"  disabled>
+						<input type="radio"  disabled>
+						<input type="radio"  disabled>
+						<input type="radio"  disabled>
+						<input type="radio"  disabled>
+						<input type="radio"  disabled>
+						<input type="radio"  disabled>
+						<input type="radio"  disabled>
+						<input type="radio"  disabled>
+						<input type="radio"  disabled>
+						<input type="radio"  checked="checked" >
+					</td>
+					<td>High speed</td>
+				</tr>
+			</table>
+			<p>
+				It can be concluded from the ratings that High speed is the most important factor for the target user. Security was not a priority, and the User interface has the least importance.
+			</p>
+		</footer>
+	</body>
+</html>
